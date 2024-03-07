@@ -11,6 +11,7 @@ app.use(express.json())
 connectDB()
 // routers
 app.use('/api/register', require('./routers/auth/register'))
+app.use('/api/login', require('./routers/auth/login'))
 
 //port
 const PORT = process.env.PORT || 9070
