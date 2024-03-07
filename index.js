@@ -10,6 +10,7 @@ app.use(express.json())
 // db
 connectDB()
 // routers
+app.use('/api/register', require('./routers/auth/register'))
 
 //port
 const PORT = process.env.PORT || 9070
@@ -19,6 +20,6 @@ mongoose.connection.once('open', () => {
   console.log("Database connection is ok")
 
   app.listen(PORT, () => {
-    console.log(`Server running on port http://localhost`)
+    console.log(`Server running on port http://localhost:${PORT}`)
   })
 })
