@@ -10,8 +10,11 @@ app.use(express.json())
 // db
 connectDB()
 // routers
+// for auth
 app.use('/api/register', require('./routers/auth/register'))
 app.use('/api/login', require('./routers/auth/login'))
+// for users
+app.use('/api/user', require('./routers/user'))
 
 //port
 const PORT = process.env.PORT || 9070
