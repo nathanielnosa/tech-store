@@ -17,6 +17,8 @@ app.use('/api/login', require('./routers/auth/login'))
 app.use('/api/user', require('./routers/user'))
 // for products
 app.use('/api/product', require('./routers/product'))
+// for cart
+app.use('/api/cart', require('./routers/cart'))
 
 //port
 const PORT = process.env.PORT || 9070
