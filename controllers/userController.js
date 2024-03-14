@@ -43,8 +43,11 @@ const getUser = async (req, res) => {
 }
 
 const getAllUser = async (req, res) => {
+  const query = req.query.new
   try {
-    const foundUser = await User.find().exec()
+    const foundUser = query 
+    ? await User.find().sort({ _id: -1 }).limit(3) 
+    : await User.find().exec()
     if (!foundUser) return res.status(401).json("No user with ID match")
     res.status(200).json(foundUser)
   } catch (error) {
